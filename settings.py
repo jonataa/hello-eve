@@ -46,7 +46,6 @@ people = {
     # 'title' tag used in item links. Defaults to the resource title minus
     # the final, plural 's' (works fine in most cases but not for 'people')
     'item_title': 'person',
-    'resource_title': 'people',
 
     # by default the standard item entry point is defined as
     # '/people/<ObjectId>'. We leave it untouched, and we also enable an
