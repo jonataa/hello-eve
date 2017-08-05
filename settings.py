@@ -27,7 +27,7 @@ schema = {
     # 'role' is a list, and can only contain values from 'allowed'.
     'role': {
         'type': 'list',
-        'allowed': ["author", "contributor", "copy"],
+        'allowed': ['author', 'contributor', 'copy'],
     },
     # An embedded 'strongly-typed' dictionary.
     'location': {
