@@ -7,7 +7,7 @@ RESOURCE_METHODS = ['GET', 'POST', 'DELETE']
 # individual items  (defaults to read-only item access).
 ITEM_METHODS = ['GET', 'PATCH', 'PUT', 'DELETE']
 
-schema = {
+people_schema = {
     # Schema definition, based on Cerberus grammar. Check the Cerberus project
     # (https://github.com/pyeve/cerberus) for details.
     'firstname': {
@@ -63,7 +63,22 @@ people = {
     # most global settings can be overridden at resource level
     'resource_methods': ['GET', 'POST'],
 
-    'schema': schema
+    'schema': people_schema
 }
 
-DOMAIN = {'people': people}
+emails_schema = {
+    'author': {
+        'type': 'objectid',
+        'data_relation': {
+            'resource': 'people',
+            'field': '_id',
+            'embeddable': True
+        },
+    },
+    'subject': {'type': 'string'},
+    'body': {'type': 'string'},
+}
+
+emails = {'schema': emails_schema}
+
+DOMAIN = {'people': people, 'emails': emails}
